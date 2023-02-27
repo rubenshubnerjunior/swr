@@ -1,0 +1,116 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang = "pt-br">
+    <head>
+        <title> Cálculos RF</title>
+        <link rel = "shortcut icon" href = "imagens/sat_02.png" >		
+        <meta charset = "utf-8">
+        <meta http-equiv = "X-UA-Compatible" content = "IE=edge">
+        <meta name = "viewport" content = "width = device-width, initial-scale=1, shrink-to-fit = no">   
+        <link rel = "stylesheet" href = "bootstrap_341/css/bootstrap.css">
+    </head>
+
+    <body background = "imagens/ceu4.jpg" >
+
+        <div id= "divPrincipal" class="container">
+
+            <p>
+            <div class = "row"> <!-- Primeira Linha    -->
+                <div class="col-sm-3"> <h4> <span  class = "label label-primary"> Potência Direta (Watts) & Dbm </span> </h4></div>
+                <div class="col-sm-3"> <h4> <span  class = "label label-primary"> Potência Refeltida (Watts) & Dbm </span> </div>
+                <div class="col-sm-3"> <h4> <span  class = "label label-primary"> Perda de Retorno (Db)  & SWR </span></div>
+
+            </div>
+            <div class = "row"> <!--Segunda linha -->
+                <div class="col-sm-3" > <input type="text" id = "txtDireta"  class = "form-control" value = "10000" > </div>
+                <div class="col-sm-3" > <input type="text" id = "txtRefletida"  class = "form-control" value = "10" > </div>
+                <div class="col-sm-3" > <input type="text" id = "txtRetorno" class = "form-control" value = "-30" disabled> </div>
+                <div class="col-sm-3">
+                    <button id="btRetorno" type="button" class = "btn btn-warning btn-lg" >  <span class="glyphicon glyphicon-triangle-top"> </span> </button>
+                </div>
+            </div>
+
+            <div class = "row"> <!--Terceira linha-->
+                <div class="col-sm-3" > <h4> <input type="text" id = "txtDbmIn"  class = "form-control" value = "70"   disabled>  </div>
+                        <div class="col-sm-3" > <h4> <input type="text" id = "txtDbmOut"  class = "form-control" value = "40"  disabled > </div>
+                                <div class="col-sm-3" >  <h4> <input type="text" id = "txtSwr"  class = "form-control" value = "1.065" disabled > </h4>  </div>
+                                <div class="col-sm-3">    </div>
+
+                        </div>
+                        <p>
+                        <div class = "row"> <!-- Quarta Linha    -->
+                            <div class="col-sm-3"> <h4> <span  class = "label label-primary"> Comprimento do Cabo (metros) </span> </h4></div>
+                            <div class="col-sm-3"> <h4> <span  class = "label label-primary"> Atenuação ( Db/100 metros)</span> </div>
+                            <div class="col-sm-3"> <h4> <span  class = "label label-primary"> Atenuação no Cabo (Db) </span></div>
+
+                        </div>
+                        <div class = "row"> <!--Quinta linha -->
+                            <div class="col-sm-3" > <input type="text" id = "txtComprimento"  class = "form-control" value = "100" > </div>
+                            <div class="col-sm-3" > <input type="text" id = "txtAt100"          class = "form-control" value = "0.726" > </div>
+                            <div class="col-sm-3" > <input type="text" id = "txtAtCabo"      class = "form-control" value = "0.726" disabled> </div>
+                            <div class="col-sm-3">
+                                <button id="btCaboAt" type="button" class = "btn btn-warning btn-lg" >  <span class="glyphicon glyphicon-triangle-top"> </span> </button>
+                            </div>
+                        </div>
+                        <p>
+                        <div class = "row"> <!-- Sexta Linha    -->
+                            <div class="col-sm-3"> <h4> <span  class = "label label-primary"> Atenuação no Cabo (Db)</span> </h4></div>
+                            <div class="col-sm-3"> <h4> <span  class = "label label-primary"> Atenuação nos Conectores (Db)</span> </div>
+                            <div class="col-sm-3"> <h4> <span  class = "label label-primary"> Atenuação Total (Db) </span></div>
+                        </div>
+                        <div class = "row"> <!--Setima linha -->
+                            <div class="col-sm-3" > <input type="text" id = "txtAtCabo2"     class = "form-control" value = "0.726" > </div>
+                            <div class="col-sm-3" > <input type="text" id = "txtAtConector"  class = "form-control" value = "0.5" > </div>
+                            <div class="col-sm-3" > <input type="text" id = "txtAtTotal"     class = "form-control" value = "1.22" disabled> </div>
+                            <div class="col-sm-3">
+                                <button id="btAtTotal" type="button" class = "btn btn-warning btn-lg" >  <span class="glyphicon glyphicon-triangle-top"> </span> </button>
+                            </div>
+                        </div>
+                        <p>
+                        <div class = "row"> <!-- Oitava Linha    -->
+                            <div class="col-sm-3"> <h4> <span  class = "label label-primary"> Potência de Entrada ( Watts ) </span> </h4></div>
+                            <div class="col-sm-3"> <h4> <span  class = "label label-primary"> Atenuação Total ( Db )</span> </div>
+                            <div class="col-sm-3"> <h4> <span  class = "label label-primary"> Potência de Saída ( Watts ) </span></div>
+
+                        </div>
+                        <div class = "row"> <!--Nona linha -->
+                            <div class="col-sm-3" > <input type="text" id = "txtPotIn"  class = "form-control" value = "10000" > </div>
+                            <div class="col-sm-3" > <input type="text" id = "txtAtInsert"          class = "form-control" value = "1.22" > </div>
+                            <div class="col-sm-3" > <input type="text" id = "txtPotSaida"      class = "form-control" value = "7716.138" disabled> </div>
+                            <div class="col-sm-3">
+                                <button id="btPout" type="button" class = "btn btn-warning btn-lg" >  <span class="glyphicon glyphicon-triangle-top"> </span> </button>
+                            </div>
+                        </div>
+                        <div class = "row"> <!-- 10º Linha    -->
+                            <div class="col-sm-3">  </div>
+                            <div class="col-sm-3"> <h4> <span  class = "label label-primary"> Potencia (Dbm)</span> </div>
+                            <div class="col-sm-3"> <h4> <span  class = "label label-primary"> Potência ( Watts ) </span></div>
+                        </div>
+                        <div class = "row"> <!--11º linha -->
+                            <div class="col-sm-3" > </div>
+                            <div class="col-sm-3" > <input type="text" id = "txtPotDb"          class = "form-control" value = "70" > </div>
+                            <div class="col-sm-3" > <input type="text" id = "txtPotWatts"      class = "form-control" value = "10000" disabled> </div>
+                            <div class="col-sm-3">
+                                <button id="btDbToWatts" type="button" class = "btn btn-warning btn-lg" >  <span class="glyphicon glyphicon-triangle-top"> </span> </button>
+                            </div>
+                        </div>
+                        
+                        
+                        
+                </div> <!--Fim da div container -->
+
+
+                <script type="text/javascript" src = "jquery-3.3.1.js"></script>
+                <script type="text/javascript" src = "bootstrap_341/js/bootstrap.js"></script>
+                <script type="text/javascript" src = "popper.js"></script>
+                <script type="text/javascript" src = "logica.js"></script>
+
+
+                </body>
+                </html>
+
+
+
